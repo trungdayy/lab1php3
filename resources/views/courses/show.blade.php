@@ -22,11 +22,10 @@
 
 @section('styles')
     <style>
-        /* Hiệu ứng hover làm đậm thẻ <a> */
         .hover-link:hover {
-            font-weight: bold; /* Làm đậm văn bản khi hover */
-            color: #007bff; /* Thay đổi màu chữ khi hover */
-            transition: all 0.3s ease-in-out; /* Thêm hiệu ứng chuyển tiếp mượt mà */
+            font-weight: bold; 
+            color: #007bff; 
+            transition: all 0.3s ease-in-out;
         }
     </style>
 @endsection

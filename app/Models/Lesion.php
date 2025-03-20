@@ -11,7 +11,6 @@ class Lesion extends Model
 
     protected $fillable = ['course_id', 'title', 'content', 'image'];
 
-    // Quan hệ n-1 với khóa học
     public function course()
     {
         return $this->belongsTo(Course::class);

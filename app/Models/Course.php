@@ -11,7 +11,6 @@ class Course extends Model
 
     protected $fillable = ['title', 'description', 'introduction', 'price'];
 
-    // Quan hệ 1-n với bảng Lesion
     public function lesions()
     {
         return $this->hasMany(Lesion::class, 'course_id');
