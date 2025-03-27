@@ -15,13 +15,7 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="{{ route('home') }}">Trang chủ</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Khóa học</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Liên hệ</a></li>
-                </ul>
-            </div>
+
         </div>
     </nav>
 

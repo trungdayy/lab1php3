@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminCourseController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Course;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\Admin\AdminLesionController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -19,3 +21,10 @@ use App\Http\Controllers\LesionController;
 
 Route::get('/lesions/{id}', [LesionController::class, 'show'])->name('lesions.show');
 Route::get('/', [CourseController::class, 'index'])->name('home');
+
+//Admin
+
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::resource('/courses', AdminCourseController::class);
+    Route::resource('/lesions', AdminLesionController::class);
+});

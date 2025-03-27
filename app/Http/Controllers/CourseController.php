@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
+use Illuminate\Support\Facades\DB;
 
 class CourseController extends Controller
 {
@@ -15,14 +16,17 @@ class CourseController extends Controller
     }
 
     public function index()
-    {
-        $categories = Course::select('category')->distinct()->get();
+{
+    $categories = Course::select('category')->distinct()->get();
 
-        $coursesByCategory = [];
-        foreach ($categories as $category) {
-            $coursesByCategory[$category->category] = Course::where('category', $category->category)->with('lesions')->get();
-        }
-
-        return view('home', compact('coursesByCategory'));
+    $coursesByCategory = [];
+    foreach ($categories as $category) {
+        $coursesByCategory[$category->category] = Course::where('category', $category->category)
+            ->with('lesions')
+            ->paginate(10); // Sửa lỗi paginate()
     }
+
+    return view('home', compact('coursesByCategory'));
+}
+
 }

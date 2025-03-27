@@ -1,15 +1,25 @@
 @extends('layouts.app')
 
 @section('content')
+    <!-- Nút chuyển đổi giữa Courses và Lesions -->
+    <div class="d-flex justify-content-between mb-3">
+        <a href="{{ route('home') }}" class="btn btn-danger">Danh sách chính</a>
+
+      <a href="{{ route('admin.courses.index') }}" class="btn btn-secondary">Quản lý Khóa học</a>
+      <a href="{{ route('admin.lesions.index') }}" class="btn btn-primary">Quản lý bài học</a>
+  </div>
     <div class="container mt-5">
-        <h1 class="text-center mb-4">{{ $lesion->title }}</h1>
+        <label for=""">Title:</label>
+        <h1 class="mb-4 form-control">{{ $lesion->title }}</h1>
 
         <div class="content mb-5">
-            <p class="lead">{{ $lesion->content }}</p>
+            <label for="image">Conten:</label>
+            <p class="form-control">{{ $lesion->content }}</p>
         </div>
 
-        <div class="text-center">
-            <img src="{{ asset('storage/'.$lesion->image) }}" alt="{{ $lesion->title }}" class="img-fluid rounded shadow-lg">
+        <div class="">
+            <label for="image">Hinh anh:</label>
+             <img src="{{ asset('storage/'.$lesion->image) }}" alt="{{ $lesion->title }}" class="img-fluid rounded shadow-lg" width="300">
         </div>
         
         <div class="text-center mt-4">

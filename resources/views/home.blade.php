@@ -3,6 +3,13 @@
 @section('title', 'Trang Chủ')
 
 @section('content')
+    <!-- Nút chuyển đổi giữa Courses và Lesions -->
+    <div class="d-flex justify-content-between mb-3">
+        <a href="{{ route('home') }}" class="btn btn-danger">Danh sách chính</a>
+
+      <a href="{{ route('admin.courses.index') }}" class="btn btn-secondary">Quản lý Khóa học</a>
+      <a href="{{ route('admin.lesions.index') }}" class="btn btn-primary">Quản lý bài học</a>
+  </div>
 <div class="container">
     <h2 class="text-center my-4">Danh Sách Khóa Học</h2>
     

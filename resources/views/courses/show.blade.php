@@ -1,6 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
+    <!-- Nút chuyển đổi giữa Courses và Lesions -->
+    <div class="d-flex justify-content-between mb-3">
+        <a href="{{ route('home') }}" class="btn btn-danger">Danh sách chính</a>
+
+      <a href="{{ route('admin.courses.index') }}" class="btn btn-secondary">Quản lý Khóa học</a>
+      <a href="{{ route('admin.lesions.index') }}" class="btn btn-primary">Quản lý bài học</a>
+  </div>
     <div class="container mt-5">
         <h1 class="text-center mb-4">{{ $course->title }}</h1>
         <p class="lead">{{ $course->description }}</p>
@@ -13,11 +20,12 @@
                     <p class="mb-1">{{ \Str::limit($lesion->content, 150) }}</p> <!-- Giới hạn nội dung -->
                 </a>
                 <div class="text-center mt-4">
-            <a href="{{ route('home')}}" class="btn btn-danger">Quay lại trang chủ</a>
         </div>
             @endforeach
         </div>
     </div>
+    <a href="{{ route('home')}}" class="btn btn-danger">Quay lại trang chủ</a>
+
 @endsection
 
 @section('styles')
